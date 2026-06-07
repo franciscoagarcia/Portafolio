@@ -1,10 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/header.astro';
+import Cards from '../components/cards.astro';
 
 import "../styles/global.css";
 import "../styles/index.css";
 import "../styles/aboutme.css"
+import "../styles/projects.css"
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -48,7 +50,21 @@ import "../styles/aboutme.css"
 					teams through agile methodologies.
 				</p>
 			</div>
+		</div>
+	</section>
 
+	<section class="projects">
+		<div class="conteiner-projects">
+			<div class="projects-text">
+				<h1>Highligth Projects</h1>
+				<span>Click on cards to view details</span>
+			</div>
+			<div class="carousel carousel--scroll-buttons carousel--scroll-markers">
+				<div class="carousel__slide" data-label="Slide 1"><Cards /></div>
+				<div class="carousel__slide" data-label="Slide 2"><Cards /></div>
+				<div class="carousel__slide" data-label="Slide 3"><Cards /></div>
+				<div class="carousel__slide" data-label="Slide 4"><Cards /></div>	
+			</div>
 		</div>
 	</section>
 </Layout>

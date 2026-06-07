@@ -1,0 +1,119 @@
+.projects {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conteiner-projects {
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.projects-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.projects-text h1 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.projects-text span {
+  font-size: 0.95rem;
+  color: #888;
+  margin: 0;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.cards {
+  width: 100%;
+}
+
+.carousel {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  anchor-name: --carousel;
+  columns: 3;
+  block-size: 420px;
+  text-align: center;
+  scrollbar-width: none;
+
+  &::column {
+    scroll-snap-align: center;
+  }
+}
+
+.carousel--scroll-buttons {
+  &::scroll-button(*) {
+    position: fixed;
+    position-anchor: --carousel;
+    position-visibility: always;
+    font-family: "Material Symbols Outlined";
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    color: #111;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: #f5f5f5;
+    }
+  }
+
+  &::scroll-button(right) {
+    position-area: inline-end center;
+    content: "arrow_forward" / "Next";
+  }
+
+  &::scroll-button(left) {
+    position-area: inline-start center;
+    content: "arrow_back" / "Previous";
+  }
+}
+
+.carousel--scroll-markers {
+  scroll-marker-group: after;
+
+  &::scroll-marker-group {
+    position: fixed;
+    position-anchor: --carousel;
+    position-area: block-end;
+    position-visibility: always;
+    margin: 10px;
+
+    display: grid;
+    grid-auto-columns: 20px;
+    grid-auto-flow: column;
+    gap: 20px;
+  }
+
+  &::column::scroll-marker {
+    content: " ";
+  }
+  &::column::scroll-marker:target-current {
+    background: var(--accent);
+  }
+}
