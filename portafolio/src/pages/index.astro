@@ -1,20 +1,28 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/header.astro';
-import badge from '../components/badge.astro';
+
+import "../styles/global.css";
+import "../styles/index.css";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<div class="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div>
+	<!-- <div class="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div> -->
 	<Header />
 	<main>
 		<section class="welcome">
-			<h1>Welcome! Nice to meet you! <badge>Curriculum Vitae</badge></h1>
-			<span>I'm Francisco Garcia. I'm Technical computer and student engineer </span>
+			<div class="left-content">
+				<h1>Welcome! Nice to meet you!</h1>
+				<span>I'm Francisco Garcia. I'm Technical computer and student engineer </span>
+			</div>
+			<div class="right-content">
+				<img src="" alt="" />
+			</div>
 		</section>
 	</main>
 </Layout>
+
+
