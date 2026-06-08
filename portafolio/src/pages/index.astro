@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/header.astro';
 import Cards from '../components/cards.astro';
+import Footer from '../components/footer.astro';
 
 import "../styles/global.css";
 import "../styles/index.css";
@@ -13,7 +14,6 @@ import "../styles/projects.css"
 ---
 
 <Layout>
-	<!-- <div class="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div> -->
 	<Header />
 	<main>
 		<section class="welcome">
@@ -26,10 +26,10 @@ import "../styles/projects.css"
 			</div>
 		</section>
 	</main>
-
+	
 	<section class="about">
 		<div class="about-grid">
-
+			
 			<div class="about-col-left">
 				<span class="about-tag">About me</span>
 				<p>
@@ -41,7 +41,7 @@ import "../styles/projects.css"
 					<!-- Tu contenido futuro -->
 				</div>
 			</div>
-
+			
 			<div class="about-col-right">
 				<p>
 					Over four years of intensive training shaped my technical foundation, 
@@ -52,7 +52,7 @@ import "../styles/projects.css"
 			</div>
 		</div>
 	</section>
-
+	
 	<section class="projects">
 		<div class="conteiner-projects">
 			<div class="projects-text">
@@ -60,13 +60,13 @@ import "../styles/projects.css"
 				<span>Click on cards to view details</span>
 			</div>
 			<div class="carousel carousel--scroll-buttons carousel--scroll-markers">
-				<div class="carousel__slide" data-label="Slide 1"><Cards /></div>
-				<div class="carousel__slide" data-label="Slide 2"><Cards /></div>
-				<div class="carousel__slide" data-label="Slide 3"><Cards /></div>
-				<div class="carousel__slide" data-label="Slide 4"><Cards /></div>	
+				<div class="carousel__slide" data-label="Slide 1"><Cards id="aurora" /></div>
+				<div class="carousel__slide" data-label="Slide 2"><Cards id="casystem" /></div>
+				<div class="carousel__slide" data-label="Slide 3"><Cards id="games" /></div>
 			</div>
 		</div>
 	</section>
+	<Footer />
 </Layout>
 
 

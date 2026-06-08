@@ -1,0 +1,168 @@
+<footer>
+    <div class="container-footer">
+
+        <!-- Links superiores centrados -->
+        <nav class="footer-nav">
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <!-- Contenido inferior -->
+        <div class="footer-bottom">
+
+            <!-- Izquierda: nombre/isotipo -->
+            <div class="footer-brand">
+                <span class="footer-name">Francisco García</span>
+            </div>
+
+            <!-- Centro: contacto -->
+            <div class="footer-contact">
+                <span class="footer-label">GET IN TOUCH</span>
+                <a href="mailto:franciscoagustingarciagarcia@gmail.com">
+                    franciscoagustingarciagarcia@gmail.com
+                </a>
+                <span>Buenos Aires, Argentina</span>
+            </div>
+
+            <!-- Derecha: redes -->
+            <div class="footer-social">
+                <span class="footer-label">CONNECT WITH ME</span>
+                <div class="footer-social-links">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                </div>
+                <span class="footer-copy">©2026, Francisco García</span>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        position: relative;
+        width: 100%;
+        padding: 48px 0 32px 0;
+        border-top: 1px solid #e0e0e0;
+    }
+
+    .container-footer {
+        max-width: 1200px;
+        height: 32vh;
+        margin: 0 auto;
+        padding: 0 48px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        justify-content: space-evenly;
+    }
+
+    /* Nav superior centrado */
+    .footer-nav {
+        display: flex;
+        justify-content: center;
+        gap: 36px;
+    }
+
+    .footer-nav a {
+        text-decoration: none;
+        color: #111;
+        font-size: 13px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+
+    .footer-nav a:hover {
+        color: #888;
+    }
+
+    /* Contenido inferior en 3 columnas */
+    .footer-bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: start;
+        gap: 32px;
+    }
+
+    /* Label estilo "GET IN TOUCH" */
+    .footer-label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #888;
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    /* Brand */
+    .footer-brand {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .footer-name {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #111;
+        line-height: 1.2;
+    }
+
+    /* Contacto */
+    .footer-contact {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .footer-contact a {
+        text-decoration: none;
+        color: #111;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .footer-contact a:hover {
+        color: #888;
+    }
+
+    .footer-contact span:last-child {
+        font-size: 13px;
+        color: #888;
+    }
+
+    /* Redes */
+    .footer-social {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .footer-social-links {
+        display: flex;
+        gap: 12px;
+    }
+
+    .footer-social-links a {
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        color: #111;
+        border: 1px solid #e0e0e0;
+        padding: 6px 14px;
+        border-radius: 999px;
+    }
+
+    .footer-social-links a:hover {
+        background: #f5f5f5;
+    }
+
+    .footer-copy {
+        font-size: 12px;
+        color: #aaa;
+        margin-top: 8px;
+    }
+</style>

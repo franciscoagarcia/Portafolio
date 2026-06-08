@@ -1,8 +1,10 @@
-<div class="container-cards">
+---
+const { id } = Astro.props;
+---
+
+<div class="container-cards" id={id}>
     <a href="#">
-        <figure>
-            <img src="" alt="Project image" />
-        </figure>
+        <figure></figure>
     </a>
 </div>
 
@@ -13,7 +15,6 @@
         border-radius: 16px;
         overflow: hidden;
         background: transparent;
-        border: 2px solid #63e;
     }
 
     a {
@@ -40,5 +41,27 @@
         max-height: 60%;
         object-fit: contain;
         display: block;
+    }
+
+    #aurora {
+        background-color: #081524;
+        background-image: url('/images/Aurora.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    #casystem {
+        background-image: url('/images/CASystem.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    #games {
+        background-image: url('/images/5MinutesGames.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 </style>
