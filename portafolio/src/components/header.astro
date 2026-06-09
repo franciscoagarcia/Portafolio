@@ -1,75 +1,141 @@
-<header>
-    <div class="container-header">
-        <div class="div-container-img">
-            <figure>
-                <img src="" alt="Francisco García">
-            </figure>
+<header class="encabezado">
+    <div class="container-encabezado">
+        <div class="figures-row">
+            <figure><img src="" alt=""></figure>
+            <figure><img src="" alt=""></figure>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Sobre mí</a></li>
-                <li><a href="#">Proyectos</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
+
+        <div class="container-links">
+            <div class="card-link">
+                <img src="" alt="">
+                <a href="">Home</a>
+            </div>
+            <div class="card-link">
+                <img src="" alt="">
+                <a href="">About Me</a>
+            </div>
+            <div class="card-link">
+                <img src="" alt="">
+                <a href="">Projects</a>
+            </div>
+            <div class="card-link">
+                <img src="" alt="">
+                <a href="">Contact</a>
+            </div>
+        </div>
     </div>
+
 </header>
 
 <style>
-    header {
-        width: 100%;
-        padding: 0 48px;
-        height: 70px;
+    .encabezado {
         position: fixed;
         top: 0;
-        left: 0;
-        z-index: 100;
-        background: #fff;
-        border-bottom: 1px solid #f0f0f0;
-    }
-
-    .container-header {
-        max-width: 1200px;
-        height: 100%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    figure {
-        margin: 0;
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-        overflow: hidden;
-    }
-
-    figure img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-
-    nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+        height: 70px;
         display: flex;
-        gap: 36px;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 10px;
     }
 
-    nav ul li a {
+    .container-encabezado {
+        width: 200px;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #ffffff;
+        padding: 8px 10px 0 10px;
+        border-radius: 16px;
+        border: 2px solid #343434;
+        overflow: hidden;
+        transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+    }
+
+
+    .container-encabezado > div:first-of-type,
+    .figures-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .container-encabezado figure {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 16px;
+        background-color: #000;
+    }
+
+    /*.container-encabezado figure img {
+        width: 60%;
+        height: 60%;
+        object-fit: contain;
+    }*/
+
+    .container-encabezado:hover {
+        width: 350px;
+        height: 240px;
+        border-radius: 16px;
+        border: 2px solid #343434;
+    }
+
+    .container-links {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: 100%;
+        margin-top: 12px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease 0s;
+    }
+
+    .container-encabezado:hover .container-links {
+        opacity: 1;
+        pointer-events: all;
+        transition: opacity 0.2s ease 0.25s;
+    }
+
+    .card-link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 8px 10px;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: background 0.15s ease;
+        cursor: pointer;
+    }
+
+    .card-link:hover {
+        background-color: #f5f5f5;
+    }
+
+    /* Isotipo del link */
+    .card-link img {
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    /* Texto del link */
+    .card-link a {
         text-decoration: none;
         color: #111;
-        font-size: 14px;
-        font-weight: 400;
-        transition: all 1.2s ease-in-out;
-    }
-
-    nav ul li a:hover {
-        font-weight: 700;
+        font-size: 13px;
+        font-weight: 500;
+        white-space: nowrap;
     }
 </style>
