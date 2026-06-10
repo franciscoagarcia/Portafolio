@@ -9,6 +9,9 @@ import "../styles/index.css";
 import "../styles/aboutme.css"
 import "../styles/projects.css"
 
+import github from '../assets/github-sign.png';
+import linkedin from '../assets/linkedin.png'
+import cv from '../assets/cv.png'
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -17,12 +20,23 @@ import "../styles/projects.css"
 	<Header />
 	<main>
 		<section class="welcome">
-			<div class="left-content">
-				<h1>Welcome! Nice to meet you!</h1>
-				<span>I'm Francisco Garcia. I'm Technical computer and student engineer </span>
+			<div class="top-content">
+				<h1>FRANCISCO GARCIA</h1>
+				<span>Hi! Nice to meet you. I'm tecnicial computer and engennier student</span>
 			</div>
-			<div class="right-content">
-				<img src="" alt="" />
+			<div class="bottom-content">
+				<div class="card-welcome-section" id="Linkedin">
+					<img src={linkedin.src} alt="LinkedIn">
+					<a href="">Linkedin</a>
+				</div>
+				<div class="card-welcome-section" id="CV">
+					<img src={cv.src} alt="CV">
+					<a href="">Curriculum Vitae</a>
+				</div>
+				<div class="card-welcome-section" id="github">
+					<img src={github.src} alt="GitHub">
+					<a href="">Github</a>
+				</div>
 			</div>
 		</section>
 	</main>
