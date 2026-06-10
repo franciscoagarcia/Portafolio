@@ -12,6 +12,11 @@ import "../styles/projects.css"
 import github from '../assets/github-sign.png';
 import linkedin from '../assets/linkedin.png'
 import cv from '../assets/cv.png'
+import csharp from '../icons/c-sharp.png'
+import mysql from '../icons/mysql-database.png'
+import python from '../icons/python.png'
+import git from '../icons/social.png'
+import xgithub from '../icons/github.png' 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -42,27 +47,53 @@ import cv from '../assets/cv.png'
 	</main>
 	
 	<section class="about">
-		<div class="about-grid">
-			
-			<div class="about-col-left">
-				<span class="about-tag">About me</span>
-				<p>
-					I'm a Computer Technician graduated with honors, currently studying 
-					Computer Engineering at Universidad de Belgrano. I specialize in 
-					information systems development, software architecture and project management.
-				</p>
-				<div class="about-card-placeholder">
-					<!-- Tu contenido futuro -->
-				</div>
+		<div class="about-container">
+
+			<!-- Título a la derecha -->
+			<div class="about-title">
+				<h2>ABOUT</h2>
 			</div>
-			
-			<div class="about-col-right">
-				<p>
-					Over four years of intensive training shaped my technical foundation, 
-					working with technologies like C#, .NET, SQL, JavaScript and Git. 
-					I enjoy designing complete system architectures and leading development 
-					teams through agile methodologies.
-				</p>
+
+			<!-- Contenido principal -->
+			<div class="about-content">
+
+				<!-- Izquierda: card doble -->
+				<div class="about-left">
+					<div class="container-img-aboutme">
+						<div class="card-img-aboutme"></div>
+						<div class="card-img-aboutme"></div>
+						<div class="card-img-aboutme"></div>
+						<div class="card-img-aboutme"></div>
+					</div>
+				</div>
+
+				<!-- Derecha: texto + stack -->
+				<div class="about-right">
+					<p class="about-text-muted">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+						Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					</p>
+					<p class="about-text-white">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+						Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+						nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+						reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+					</p>
+					
+					<hr>
+					<!-- Stack -->
+					<div class="about-stack">
+						<span class="about-stack-label">STACK</span>
+						<div class="about-stack-icons">
+							<img src={csharp.src} alt="C#">
+							<img src={mysql.src} alt="mysql">
+							<img src={python.src} alt="Python">
+							<img src={git.src} alt="Git">
+							<img src={xgithub.src} alt="github">
+						</div>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</section>
