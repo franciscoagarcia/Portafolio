@@ -1,5 +1,7 @@
 .projects {
+  position: relative;
   width: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,12 +9,21 @@
 }
 
 .conteiner-projects {
-  width: 90%;
-  height: 100vh;
+  width: 85%;
+  height: 87vh;
+  background-color: #e0e0e0;
+  background-image: url(https://i.pinimg.com/1200x/ff/0e/e9/ff0ee979e682bbb84cce4e725a999682.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  box-shadow: -8px 1px 24px 15px rgba(0, 0, 0, 0.48);
+  -webkit-box-shadow: -8px 1px 24px 15px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: -8px 1px 24px 15px rgba(0, 0, 0, 0.48);
 }
 
 .projects-text {
@@ -24,14 +35,14 @@
 }
 
 .projects-text h1 {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  font-weight: 700;
+  font-size: 4rem;
+  font-style: bold;
   color: #fff;
   margin: 0;
 }
 
 .projects-text span {
-  font-size: 0.95rem;
+  font-size: 1.5rem;
   color: #888;
   margin: 0;
 }

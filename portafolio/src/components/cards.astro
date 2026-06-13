@@ -3,7 +3,7 @@ const { id } = Astro.props;
 ---
 
 <div class="container-cards" id={id}>
-    <a href="#">
+    <a href={`/projects/${id}`}>
         <figure></figure>
     </a>
 </div>
@@ -59,7 +59,7 @@ const { id } = Astro.props;
     }
 
     #games {
-        background-image: url('/images/5MinutesGames.jpg');
+        background-image: url('/images/5MinutesGames.png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;

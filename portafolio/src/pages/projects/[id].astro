@@ -1,0 +1,261 @@
+---
+import { getCollection, render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+    const proyectos = await getCollection("projects");
+
+    return proyectos.map((proyecto: CollectionEntry<"projects">) => ({
+        params: { id: proyecto.id.replace(/\.md$/, "") },
+        props: { proyecto }
+    }));
+}
+
+type Props = {
+    proyecto: CollectionEntry<"projects">;
+};
+
+const { proyecto } = Astro.props as Props;
+const { titulo, Desarrollador, imagen ,fecha, repositorio, gitclone, stack } = proyecto.data;
+const { Content } = await render(proyecto);
+---
+
+<Layout>
+    <main class="project-page">
+        <div class="project-container">
+
+            <a href="/" class="project-back">← Volver</a>
+
+            <div class="project-content-grid">
+
+                <div class="project-left">
+                    <img src={`/images/${imagen}`} alt={titulo} />
+                </div>
+
+                <div class="project-right">
+                    <span class="project-tag">PROJECT</span>
+                    <h1>{titulo}</h1>
+                    <p class="project-dev">{Desarrollador}</p>
+
+                    <div class="project-meta">
+                        <div class="project-meta-item">
+                            <span class="meta-label">FECHA</span>
+                            <span class="meta-value">{fecha}</span>
+                        </div>
+                        <div class="project-meta-item">
+                            <span class="meta-label">STACK</span>
+                            <span class="meta-value">{stack}</span>
+                        </div>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href={repositorio} target="_blank" class="project-btn-primary">
+                            Ver repositorio
+                        </a>
+                        <code class="project-clone">{gitclone}</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-markdown">
+                <Content />
+            </div>
+
+        </div>
+    </main>
+</Layout>
+
+<style>
+    .project-page {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        padding: 120px 48px 80px 48px;
+    }
+
+    .project-container {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    /* Btn volver */
+    .project-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        color: #888;
+        letter-spacing: 0.04em;
+        transition: color 0.2s ease;
+        width: fit-content;
+    }
+
+    .project-back:hover {
+        color: #111;
+    }
+
+    /* Grid imagen + datos */
+    .project-content-grid {
+        display: flex;
+        flex-direction: row;
+        gap: 64px;
+        align-items: center;
+    }
+
+    /* Izquierda: imagen */
+    .project-left {
+        flex-shrink: 0;
+        width: 460px;
+        height: 320px;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 2px solid #e0e0e0;
+    }
+
+    .project-left img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Derecha: datos */
+    .project-right {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        flex: 1;
+    }
+
+    .project-tag {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #888;
+    }
+
+    .project-right h1 {
+        font-size: clamp(1.8rem, 3vw, 2.8rem);
+        font-weight: 800;
+        color: #111;
+        margin: 0;
+        line-height: 1.1;
+    }
+
+    .project-dev {
+        font-size: 14px;
+        color: #888;
+        margin: 0;
+    }
+
+    /* Meta: fecha y stack */
+    .project-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        border-radius: 14px;
+        border: 1px solid #e0e0e0;
+        background: #fafafa;
+    }
+
+    .project-meta-item {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .meta-label {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #aaa;
+        width: 50px;
+        flex-shrink: 0;
+    }
+
+    .meta-value {
+        font-size: 14px;
+        color: #333;
+        font-weight: 500;
+    }
+
+    /* Acciones */
+    .project-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .project-btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 28px;
+        border-radius: 12px;
+        background: #111;
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        transition: background 0.2s ease, transform 0.2s ease;
+        width: fit-content;
+    }
+
+    .project-btn-primary:hover {
+        background: #333;
+        transform: translateY(-2px);
+    }
+
+    .project-clone {
+        font-size: 12px;
+        color: #888;
+        background: #f5f5f5;
+        padding: 10px 14px;
+        border-radius: 8px;
+        display: block;
+        font-family: monospace;
+        border: 1px solid #e0e0e0;
+    }
+
+    /* Contenido markdown */
+    .project-markdown {
+        border-top: 1px solid #e0e0e0;
+        padding-top: 40px;
+    }
+
+    .project-markdown h2 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #111;
+        margin-bottom: 12px;
+    }
+
+    .project-markdown p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+        color: #444;
+        margin-bottom: 16px;
+    }
+
+    .project-markdown ul {
+        padding-left: 20px;
+        color: #444;
+        line-height: 1.75;
+    }
+
+    .project-markdown li {
+        margin-bottom: 6px;
+        font-size: 0.95rem;
+    }
+</style>

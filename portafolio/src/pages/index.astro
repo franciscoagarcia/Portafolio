@@ -1,4 +1,7 @@
 ---
+import { getCollection } from "astro:content";
+const projects = await getCollection("projects");
+
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/header.astro';
 import Cards from '../components/cards.astro';
@@ -17,6 +20,7 @@ import mysql from '../icons/mysql-database.png'
 import python from '../icons/python.png'
 import git from '../icons/social.png'
 import xgithub from '../icons/github.png' 
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -24,7 +28,7 @@ import xgithub from '../icons/github.png'
 <Layout>
 	<Header />
 	<main>
-		<section class="welcome">
+		<section class="welcome" id="welcome-section-link">
 			<div class="top-content">
 				<h1>FRANCISCO GARCIA</h1>
 				<span>Hi! Nice to meet you. I'm tecnicial computer and engennier student</span>
@@ -36,17 +40,17 @@ import xgithub from '../icons/github.png'
 				</div>
 				<div class="card-welcome-section" id="CV">
 					<img src={cv.src} alt="CV">
-					<a href="">Curriculum Vitae</a>
+					<a href="https://www.linkedin.com/in/fraga19/">Curriculum Vitae</a>
 				</div>
 				<div class="card-welcome-section" id="github">
 					<img src={github.src} alt="GitHub">
-					<a href="">Github</a>
+					<a href="https://github.com/franciscoagarcia">Github</a>
 				</div>
 			</div>
 		</section>
 	</main>
 	
-	<section class="about">
+	<section class="about" id="aboutme-section-link">
 		<div class="about-container">
 
 			<!-- Título a la derecha -->
@@ -98,7 +102,7 @@ import xgithub from '../icons/github.png'
 		</div>
 	</section>
 	
-	<section class="projects">
+	<section class="projects" id="project-section-link">
 		<div class="conteiner-projects">
 			<div class="projects-text">
 				<h1>Highligth Projects</h1>
